@@ -27,7 +27,7 @@ def downloadZip():
 
     try:
         label_status.configure(text="Downloading zip from Mirror...", fg="orange")
-        r = requests.get(my_secrets["URL"])
+        r = requests.get("https://mirror.thewoodenbox.uk/modpack.zip")
         z = zipfile.ZipFile(io.BytesIO(r.content))
         label_status.configure(text="Extracting...", fg="orange")
         z.extractall(dir)
